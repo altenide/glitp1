@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build">
+	<path id="build.classpath">
+		<pathelement location="classes"/>
+	</path>
+	<target name="init">
+		<mkdir dir="classes"/>
+	</target>
+	<target name="clean">
+		<delete dir="classes"/>
+	</target>
+	<target depends="init" name="build">
+		<javac srcdir="." destdir="classes" source="1.5" target="1.5" fork="yes">
+			<classpath refid="build.classpath"/>
+			<include name="IITem.java"/>
+			<include name="IControllerForComponent.java"/>
+			<include name="Observer.java"/>
+			<include name="View/MyComponent.java"/>
+			<include name="View/IComponent.java"/>
+			<include name="ControllerForComponent.java"/>
+			<include name="Imodel.java"/>
+			<include name="DataAdapter.java"/>
+			<include name="Data.java"/>
+			<include name="Item.java"/>
+		</javac>
+	</target>
+</project>
